@@ -1,5 +1,20 @@
 @import './var.scss';
 
+body.visible {
+    .header{
+     .nav{
+         .nav-list{
+             flex-direction: column;
+             position: absolute;
+             top: 0;
+             right: 0;
+             background-color: black;
+         }
+     }
+    }
+ }
+ 
+
 .header{
     background-color: $purple;
     .nav{
@@ -10,13 +25,14 @@
 
         @media screen  and (max-width: 1110px){
             ul{
-                width: 100%;
+                width: 70%;
                 align-items: center;
                 justify-content: center;
                 text-align: center;
                 padding: 50px;
                 align-items: center;
                 top: 0;
+                z-index: 2;
             }
         }
 
@@ -80,7 +96,7 @@
         }
 
         .dropdown-button{
-            z-index: 0;
+            z-index: 2;
             background: transparent;
             border: none;
 
@@ -95,18 +111,121 @@
         border: 1px solid #FFFFFF80;
     }
 
-}
-
-body.visible {
-   .header{
-    .nav{
-        .nav-list{
-            flex-direction: column;
+    .hero{
+        padding: 100px 0 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        position: relative;
+        img{
             position: absolute;
-            top: 0;
-            right: 0;
-            background-color: black;
+            top: 200px; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 80%;
+
+            @media screen and (max-width: 700px) {
+                display: none;
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        h1{
+            margin-bottom: 20px;
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 140%;
+            flex: 1 1 auto;
+            letter-spacing: 0%;
+            color: #FFFFFF;
+            max-width: 580px;
+        }
+
+        p{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            letter-spacing: 0%;
+            color: #FFFFFF;
+            max-width: 480px;
+            margin-bottom: 20px;
+        }
+
+        button{
+            z-index: 1;
+            position: relative;
         }
     }
-   }
+
+}
+
+.clothes{
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .clothes-container{
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 240px));
+            justify-content: space-between;
+            gap: 50px 10px;
+            article{
+                max-width: 240px;
+                position: relative;
+                transition: .2s ease;
+
+                p{
+                    margin-bottom: 10px;
+                    color:#444B58;
+                }
+
+                h3{
+                    color:#444B58;
+                }
+
+                img{
+                    width: 100%;
+                transition: .2s ease;
+
+                }
+
+                &:hover img{
+                    filter: sepia(20%);
+                }
+
+                .controls{
+                    position: absolute;
+                    top: 40%;
+                    width: 60%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    button{
+                        border: none;
+                        cursor: pointer;
+                        background: transparent;
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        background-color: #444B58;
+
+                        img{
+                            height: 20px;
+                            width: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        button{
+            margin-top: 20px;
+        }
+    }
 }

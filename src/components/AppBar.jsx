@@ -42,6 +42,7 @@ export default function AppBar() {
       document.body.style.overflow = 'visible';
       style.alignItems = 'center';
       style.borderLeft = 'none';
+      style.borderLeft = '3px solid black';
     }
   }, [size, vis]);
 
@@ -80,7 +81,7 @@ export default function AppBar() {
             <BuyButton Buy={Buy} />
           </li>
         </ul>
-        {size <= 1100 && <Dropdown img={<IoMenu />} handleClick={handleClick} second={<IoCloseSharp />} />}
+        {size <= 1110 && <Dropdown img={<IoMenu />} handleClick={handleClick} second={<IoCloseSharp />} />}
       </nav>
       <hr />
     </>
