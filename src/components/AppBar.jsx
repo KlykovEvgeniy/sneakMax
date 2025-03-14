@@ -7,6 +7,8 @@ import { IoCloseSharp } from 'react-icons/io5';
 import Dropdown from './DropDown';
 import useWindowWidth from '../hooks/useWindowWidth';
 
+
+
 export default function AppBar() {
   const [vis, setVis] = useState(false);
   const size = useWindowWidth();

@@ -12,10 +12,98 @@ body.visible {
          }
      }
     }
- }
- 
+}
 
 .header{
+    position: relative;
+    .container{
+        position: relative;
+        .buy-dropdown{
+            position: absolute;
+            top: 73px;
+            right: 0;
+            z-index: 3;
+            width:  480px;
+            margin-right: 1.2%;
+            background-color: white;
+            max-height: 400px;
+            overflow-y: scroll;
+
+            article{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin:20px 0;
+                background-color: #CCD9F233;
+                justify-content: space-between;
+                padding: 20px 10px;
+
+                &:first-child{
+                    margin-top: 0;
+                }
+
+                .article-main{
+                    display: flex;
+                    align-items: center;
+                }
+
+                p{
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 20px;
+                    letter-spacing: 0%;
+                    margin-bottom: 10px;
+                    color: #4D4D4D;
+                }
+
+                h3{
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 100%;
+                    letter-spacing: 0%;
+                    color: #4D4D4D;
+                }
+
+                img{
+                    width: 30%;
+                    margin-right: 10px;
+                }
+                button{
+                    border: none;
+                    background: none;
+                    cursor: pointer;
+                    .trash-icon{
+                        width: 30px;
+                    }
+                }
+            }
+            .buy-drop-bottom{
+                background-color: #CCD9F2;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 30px;
+                width: 100%;
+
+                p{
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 20px;
+                    letter-spacing: 0%;
+                    color: #4D4D4D;
+
+                }
+
+                h3{
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 100%;
+                    letter-spacing: 0%;
+                    color: #4D4D4D;
+                }
+            }
+        }
+    }
     background-color: $purple;
     .nav{
         display: flex;
@@ -106,7 +194,6 @@ body.visible {
             }
         }
     }
-
     hr{
         border: 1px solid #FFFFFF80;
     }
@@ -163,10 +250,13 @@ body.visible {
 
 .clothes{
     .container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         width: 100%;
+        .clothes{
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content: space-between;
+        }
         .clothes-container{
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 240px));

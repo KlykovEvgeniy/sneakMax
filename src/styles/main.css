@@ -7,7 +7,87 @@ body.visible .header .nav .nav-list {
 }
 
 .header {
+  position: relative;
   background-color: #484283;
+}
+.header .container {
+  position: relative;
+}
+.header .container .buy-dropdown {
+  position: absolute;
+  top: 73px;
+  right: 0;
+  z-index: 3;
+  width: 480px;
+  margin-right: 1.2%;
+  background-color: white;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+.header .container .buy-dropdown article {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  background-color: rgba(204, 217, 242, 0.2);
+  justify-content: space-between;
+  padding: 20px 10px;
+}
+.header .container .buy-dropdown article:first-child {
+  margin-top: 0;
+}
+.header .container .buy-dropdown article .article-main {
+  display: flex;
+  align-items: center;
+}
+.header .container .buy-dropdown article p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  margin-bottom: 10px;
+  color: #4D4D4D;
+}
+.header .container .buy-dropdown article h3 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #4D4D4D;
+}
+.header .container .buy-dropdown article img {
+  width: 30%;
+  margin-right: 10px;
+}
+.header .container .buy-dropdown article button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.header .container .buy-dropdown article button .trash-icon {
+  width: 30px;
+}
+.header .container .buy-dropdown .buy-drop-bottom {
+  background-color: #CCD9F2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  width: 100%;
+}
+.header .container .buy-dropdown .buy-drop-bottom p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #4D4D4D;
+}
+.header .container .buy-dropdown .buy-drop-bottom h3 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #4D4D4D;
 }
 .header .nav {
   display: flex;
@@ -141,10 +221,13 @@ body.visible .header .nav .nav-list {
 }
 
 .clothes .container {
+  width: 100%;
+}
+.clothes .container .clothes {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  justify-content: space-between;
 }
 .clothes .container .clothes-container {
   display: grid;

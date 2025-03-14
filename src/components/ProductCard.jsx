@@ -2,16 +2,29 @@ import { useState } from 'react';
 import productImage from '../img/clothes-photo.jpg';
 import show from '../img/Show.svg';
 import buySecond from '../img/buy-2.svg';
+import { useDispatch } from 'react-redux';
+import { add } from '../redux/slices/buy';
 
 export default function ProductCard({ product }) {
   const [curr, setCurr] = useState(null);
-  const { name, cost } = product;
+  const { name, cost, company } = product;
+  const dispacth = useDispatch();
 
   const onMouseEnter = (event) => {
     setCurr(event.currentTarget.classList[0]);
   };
   const onMouseLeave = () => {
     setCurr(null);
+  };
+
+  const handleClick = (event) => {
+    const objMain = event.currentTarget.classList;
+
+    const obj = {
+      name: objMain[0],
+      cost: objMain[1]
+    };
+    dispacth(add(obj));
   };
 
   return (
@@ -24,7 +37,7 @@ export default function ProductCard({ product }) {
           <button type="button">
             <img src={show} alt="Show product" />
           </button>
-          <button type="button">
+          <button className={`${name} ${cost} ${company} `} onClick={handleClick} type="button">
             <img src={buySecond} alt="Buy product" />
           </button>
         </div>
