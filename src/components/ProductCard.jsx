@@ -8,6 +8,8 @@ import { add } from '../redux/slices/buy';
 export default function ProductCard({ product }) {
   const [curr, setCurr] = useState(null);
   const { name, cost, company } = product;
+  const [vis, setVis] = useState(false);
+  const [curDesc, setCurDesc] = useState(null);
   const dispacth = useDispatch();
 
   const onMouseEnter = (event) => {
@@ -27,21 +29,26 @@ export default function ProductCard({ product }) {
     dispacth(add(obj));
   };
 
+  const viewClick = (event) => {
+    const list = event.currentTarget.classList;
+    setVis((prev) => !prev);
+    setCurDesc(list.value);
+  };
+
   return (
-    <article onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className={`product-card-${product.id}`}>
-      <img src={productImage} alt="productImage" />
-      <p>{name}</p>
-      <h3>{cost} р</h3>
-      {curr && (
-        <div className="controls">
-          <button type="button">
-            <img src={show} alt="Show product" />
-          </button>
-          <button className={`${name} ${cost} ${company} `} onClick={handleClick} type="button">
-            <img src={buySecond} alt="Buy product" />
-          </button>
-        </div>
-      )}
-    </article>
+    <>
+      <article onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className={`product-card-${product.id}`}>
+        <img src={productImage} alt="productImage" />
+        <p>{name}</p>
+        <h3>{cost} р</h3>
+        {curr && (
+          <div className="controls">
+            <button className={`${name} ${cost} ${company} `} onClick={handleClick} type="button">
+              <img src={buySecond} alt="Buy product" />
+            </button>
+          </div>
+        )}
+      </article>
+    </>
   );
 }

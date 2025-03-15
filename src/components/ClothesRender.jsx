@@ -25,7 +25,7 @@ function ClothesRender() {
         <div className="clothes">
           <div className="clothes-container">
             {entries.map((item) => {
-              return <ProductCard key={item.company} product={item} />;
+              return <ProductCard key={item.company} product={item}/>;
             })}
           </div>
           <Button click={handleClick} text="Показать еще" color="#F14F4F" textColor="white" />

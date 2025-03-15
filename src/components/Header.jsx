@@ -5,12 +5,12 @@ import BuyDropdowm from './BuyDropdwon';
 import { useSelector } from 'react-redux';
 
 export default function Header() {
-  const state = useSelector((state) => state);
+  const {isVisible} = useSelector((state) => state.isVisible);
 
   return (
     <header className="header">
       <Container>
-        {state.isVisible.isVisible && <BuyDropdowm />}
+        {isVisible && <BuyDropdowm />}
         <AppBar />
         <Hero />
       </Container>
